@@ -1,0 +1,13 @@
+<div class="container d-flex" style="gap: 8px;">
+    <button class="btn btn-primary" (click)="togglePredicate($event)">Members I like</button>
+    <button class="btn btn-primary" (click)="togglePredicate($event)" >Members who like me</button>
+    <button class="btn btn-primary" (click)="togglePredicate($event)" >Mutual</button>
+</div>
+
+<div class="d-flex mt-3" style="gap: 10px;">
+    @for (member of members; track member.id) {
+        <div class="col-3">
+            <app-member-detail [member]="member"></app-member-detail>
+        </div>
+    }    
+</div>

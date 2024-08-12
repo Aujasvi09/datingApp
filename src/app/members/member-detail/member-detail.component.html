@@ -1,0 +1,21 @@
+<div class="card mb-4" style="width: 100%;">
+    <div class="image-wrapper">
+        <img class="card-img-top" src={{member().photoUrl}} alt="Card image cap">
+        <div class="member-icons">
+            <button type="button" routerLink="{{member().userName}}" class="btn btn-primary"><i class="fa fa-user"></i></button>
+            <button type="button" (click)="toggleLike()" class="btn btn-primary"><i class="fa fa-heart"></i></button>
+            <button type="button" class="btn btn-primary"><i class="fa fa-envelope"></i></button>
+          </div>
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">
+        {{member().userName}}, {{member().age}}
+        @if(hasLiked()) {
+          <i class="fa fa-heart" style="color: red;"></i>
+        }
+      </h5>
+    </div>
+    <div class="card-body text-center">
+        <h6 class="card-subtitle mb-2 text-muted">{{member().knownAs}}</h6>
+    </div>
+  </div>
